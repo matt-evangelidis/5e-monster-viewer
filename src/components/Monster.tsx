@@ -1,3 +1,4 @@
+import {Stats} from "./Stats";
 import react from "react";
 import Creature from "../types/Creature";
 import { iterator } from "../utils/iterator";
@@ -17,7 +18,7 @@ const Monster: React.FC<Props> = ({ creature }) => {
             <h2>Hit Points {creature.hitPoints.value} {creature.hitPoints.formula}</h2>
 
             <Speed speeds={creature.speeds}/>
-            
+            <Stats stats={creature.stats}/>
             
         </div>
     );
