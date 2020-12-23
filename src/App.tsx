@@ -20,8 +20,7 @@ const dragon: Creature = {
     speeds: {
         base: 60,
         fly: 120,
-        climb: 30,
-        hover: false
+        climb: 30
     },
     stats: { //accessible as 0-5
         strength: 30,//0

@@ -13,11 +13,11 @@ interface Props{
 };
 
 export const Speed: React.FC<Props> = ({speeds}) => {
-    const base = speeds.base;
     const ft = "ft.";
 
-    //iterate through properties of speeds and construct a [key,value] array
+    //iterate through properties of speeds and construct a {key,value} array
     const arr = iterator(speeds);
+    console.log(arr);
 
     //check for fly property
     const fly = arr.find(item => item.key === "fly");
@@ -25,7 +25,7 @@ export const Speed: React.FC<Props> = ({speeds}) => {
     if (fly) {
         //find hover property
         let checkHover: number = arr.findIndex(item => item.key === "hover");
-        console.log("hover index", checkHover);
+        //console.log("hover index", checkHover);
     
         //if checkHover is not undefined and not equal to -1,
         //remove hover from the properties array, and add the term to the fly property if value is true
