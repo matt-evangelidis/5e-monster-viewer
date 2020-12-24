@@ -1,12 +1,13 @@
 import {Stats} from "./Stats";
-import react from "react";
+import React from "react";
 import Creature from "../types/Creature";
 import { iterator } from "../utils/iterator";
 import { Speed } from "./Speed";
+import { SavingThrows } from "./SavingThrows";
 
 interface Props {
     creature: Creature;
-}
+};
 
 const Monster: React.FC<Props> = ({ creature }) => {
 
@@ -19,6 +20,7 @@ const Monster: React.FC<Props> = ({ creature }) => {
 
             <Speed speeds={creature.speeds}/>
             <Stats stats={creature.stats}/>
+            <SavingThrows saves={creature.saves}stats={creature.stats} proficiency ={creature.proficiency}/>
             
         </div>
     );

@@ -1,15 +1,9 @@
 import React from "react";
+import { ISpeeds } from "../types/Creature";
 import {iterator} from "../utils/iterator";
 
 interface Props{
-    speeds: {
-        base: number;
-        climb?: number;
-        fly?: number;
-        swim?: number;
-        burrow?: number;
-        hover?: boolean;
-    }
+    speeds: ISpeeds
 };
 
 export const Speed: React.FC<Props> = ({speeds}) => {
@@ -44,6 +38,7 @@ export const Speed: React.FC<Props> = ({speeds}) => {
 
     return(
         <div>
+            <p>Speed</p>
             <ul>
                 {displaySpeeds}
             </ul>

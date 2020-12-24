@@ -28,23 +28,24 @@ const dragon: Creature = {
         constitution: 28,//2
         intelligence: 19,//3
         wisdom: 23,//4
-        charisma: 26//5
+        charisma: 26,//5
+        
     },
-    savingThrows: {
-        str: true,
-        dex: true,
-        con: true,
-        wis: true
+    saves:{
+        strength: true,
+        dexterity: true,
+        constitution: true,
+        wisdom: true
     },
     skills: {//18 total skills
         //str
-        athletics: [1, true],
+        athletics: 2,
         //wis
-        insight: [1, false],
-        perception: [1, false],
-        survival: [1, false],
+        insight: 1,
+        perception: 1,
+        survival: 1,
         //cha
-        intimidation: [1, false]
+        intimidation: 1
     },
     damageResistImmune: {//1 is resist, 2 is immune
         force: 2
