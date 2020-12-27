@@ -8,6 +8,7 @@ import { Skills } from "./Skills";
 import { DamageVulnResistImmune } from "./DamageVulnResistImmune";
 import { ConditionImmunes } from "./ConditionImmunes";
 import { Senses } from "./Senses";
+import { Languages } from "./Languages";
 
 interface Props {
     creature: Creature;
@@ -29,7 +30,7 @@ const Monster: React.FC<Props> = ({ creature }) => {
             <DamageVulnResistImmune damages={creature.damageVulnResistImmune}/>
             <ConditionImmunes conditions={creature.conditionImmunes}/>
             <Senses senses={creature.senses} stats={creature.stats} skills={creature.skills} proficiency={creature.proficiency}/>
-            {/* Languages */}
+            <Languages languages={creature.languages}/>
             {/* Challenge */}
             {/* Traits */}
             {/* Actions */}
