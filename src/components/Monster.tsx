@@ -5,6 +5,7 @@ import { iterator } from "../utils/iterator";
 import { Speed } from "./Speed";
 import { SavingThrows } from "./SavingThrows";
 import { Skills } from "./Skills";
+import { DamageVulnResistImmune } from "./DamageVulnResistImmune";
 
 interface Props {
     creature: Creature;
@@ -23,6 +24,7 @@ const Monster: React.FC<Props> = ({ creature }) => {
             <Stats stats={creature.stats}/>
             <SavingThrows saves={creature.saves}stats={creature.stats} proficiency ={creature.proficiency}/>
             <Skills skills={creature.skills} stats={creature.stats} proficiency={creature.proficiency}/>
+            <DamageVulnResistImmune damages={creature.damageVulnResistImmune}/>
             
         </div>
     );
