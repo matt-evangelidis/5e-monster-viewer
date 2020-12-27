@@ -19,7 +19,7 @@ class Creature {
 
     damageVulnResistImmune?: IDamageVulnResistImmune;
     conditionImmunes?: string[];
-    senses!: ISenses;
+    senses?: ISense[];
 
     languages!: string[];
     challenge!: number;
@@ -93,12 +93,9 @@ export interface IDamageVulnResistImmune {//-1 is vuln, 0 is nothing, 1 is resis
     thunder?: number;
 }
 
-export interface ISenses {
-    blindsight?: number;
-    darkvision?: number;
-    tremorsense?: number;
-    truesight?: number;
-    //passive
-}
+export interface ISense {
+    key: string;
+    value: number;
+};
 
 export default Creature;

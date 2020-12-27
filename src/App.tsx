@@ -53,11 +53,10 @@ const dragon: Creature = {
         force: 2
     },
     conditionImmunes: ["frightened","charmed","prone"],
-    senses:{
-        blindsight: 60,
-        darkvision: 120
-        //passive
-    },
+    senses:[
+        {key:"darkvision", value: 120},
+        {key:"blindsight", value: 60},
+    ],
     languages: ["Common", "Draconic"],
     challenge: 27,
     traits: [],
