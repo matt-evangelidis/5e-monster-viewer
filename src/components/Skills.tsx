@@ -46,7 +46,9 @@ export const Skills: React.FC<Props> = ({stats, skills, proficiency}) => {
     return(
         <div>
             <p>Skills</p>
-            {displaySkills}
+            <ul>
+                {displaySkills}
+            </ul>
         </div>
     );
 };

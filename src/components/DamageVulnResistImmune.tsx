@@ -45,11 +45,17 @@ export const DamageVulnResistImmune: React.FC<Props> = ({damages}) => {
     return(
         <div>
             {vulnArr.length > 0 && <p>Damage Vulnerabilities</p>}
-            {displayVuln}
+            <ul>
+                {displayVuln}
+            </ul>
             {resistArr.length > 0 && <p>Damage Resistances</p>}
-            {displayResist}
+            <ul>
+                {displayResist}
+            </ul>
             {immuneArr.length > 0 && <p>Damage Immunities</p>}
-            {displayImmune}
+            <ul>
+                {displayImmune}
+            </ul>
         </div>
     );
 };

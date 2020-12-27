@@ -32,7 +32,9 @@ export const Senses: React.FC<Props> = ({senses, skills, stats, proficiency}) =>
     return(
         <div>
             <p>Senses</p>
-            {displaySenses}
+            <ul>
+                {displaySenses}
+            </ul>
             <li key={passive?.key}>passive Perception {value}</li>
         </div>
     );

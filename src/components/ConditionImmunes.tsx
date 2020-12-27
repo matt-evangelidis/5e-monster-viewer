@@ -20,7 +20,9 @@ export const ConditionImmunes: React.FC<Props> = ({conditions}) => {
     return(
         <div>
             <p>Condition Immunities</p>
-            {displayConditions}
+            <ul>
+                {displayConditions}
+            </ul>
         </div>
     );
 };

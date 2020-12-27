@@ -42,7 +42,9 @@ export const SavingThrows: React.FC<Props> = ({proficiency, stats, saves}) => {
     return(
         <div>
             <p>Saving Throws</p>
-            <ul>{displaySaves}</ul>
+            <ul>
+                {displaySaves}
+            </ul>
         </div>
     );
 };
