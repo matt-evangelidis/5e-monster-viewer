@@ -59,7 +59,25 @@ const dragon: Creature = {
     ],
     languages: ["Common", "Draconic"],
     challenge: 27,
-    traits: [],
+    traits: [
+        {name:"Deathproof." , desc: `If an effect would kill the dragon, it may instead
+        lose half its current hit points (rounded down) to survive instead.
+        The dragon cannot use this feature if it has fewer than 50 hit
+        points.`},
+        {name:"Heavy Armor.", desc: `The dragon reduces damage it takes from
+        weapon attacks by 15.`},
+        {name:"Immense.", desc: `The dragon’s form is tremendous. It is 60 feet long
+        from snout to tail and has a wingspan of more than 80 feet. On
+        the battlefield, the dragon typically occupies a 25-foot-by-25-foot
+        space. The dragon can end its movement in a Huge or smaller
+        creature’s space and does not treat such spaces as difficult terrain
+        when moving through them.`},
+        {name:"Improved Critical", desc: `The dragon’s weapon attacks score a critical
+        hit on a 17–20.`},
+        {name:"Legendary Supremacy (5/Day).", desc: `If the dragon fails a saving
+        throw or ability check, it can choose to succeed instead.`},
+        {name:"Spell Resistance", desc: `The dragon takes half damage from spells.`},
+    ],
     actions: [],
     legendary: true,
     legendaryActions: []

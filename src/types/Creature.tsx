@@ -23,12 +23,17 @@ class Creature {
 
     languages!: string[];
     challenge!: number;
-    traits!: entry[];
+    traits?: ITrait[];
     actions!: entry[];
     legendary?: boolean;
     mythic?: boolean;
     legendaryActions?: entry[];
 
+};
+
+export interface ITrait {
+    name: string;
+    desc: string;
 };
 
 interface entry {
