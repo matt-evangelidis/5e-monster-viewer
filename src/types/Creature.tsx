@@ -15,10 +15,9 @@ class Creature {
     speeds!: ISpeeds;
     stats!: IStats;
     saves?: ISaves;
-    skills!: ISkills;
+    skills?: ISkills;
 
-    damageResistImmune?: IDamageResistImmune;
-    damageVulnerable?: IDamageVulnerable;
+    damageVulnResistImmune?: IDamageVulnResistImmune;
     conditionImmune?: IConditionImmune;
     senses!: ISenses;
 
@@ -65,33 +64,20 @@ export interface ISaves {
 }
 
 export interface ISkills {
-    //18 total skills, 0 is none, 1 is proficient, 2 is expertise
-    //str
-    athletics?: number;
-    //dex
-    acrobatics?: number;
-    sleightOfHand?: number;
-    stealth?: number;
-    //int
-    arcana?: number;
-    history?: number;
-    investigation?: number;
-    nature?: number;
-    religion?: number;
-    //wis
-    animalHandling?: number;
-    insight?: number;
-    medicine?: number;
-    perception?: number;
-    survival?: number;
-    //cha
-    deception?: number;
-    intimidation?: number;
-    performance?: number;
-    persuasion?: number;
+    strength?: ISkill[];
+    dexterity?: ISkill[];
+    constitution?: ISkill[];
+    intelligence?: ISkill[];
+    wisdom?: ISkill[];
+    charisma?: ISkill[];
 }
 
-export interface IDamageResistImmune {//1 is resist, 2 is immune
+interface ISkill {
+    key: string;
+    prof: number;
+}
+
+export interface IDamageVulnResistImmune {//-1 is vuln, 0 is nothing, 1 is resist, 2 is immune
     acid?: number;
     bludgeoning?: number;
     cold?: number;
@@ -105,22 +91,6 @@ export interface IDamageResistImmune {//1 is resist, 2 is immune
     radiant?: number;
     slashing?: number;
     thunder?: number;
-}
-
-export interface IDamageVulnerable {
-    acid?: boolean;
-    bludgeoning?: boolean;
-    cold?: boolean;
-    fire?: boolean;
-    force?: boolean;
-    lightning?: boolean;
-    necrotic?: boolean;
-    piercing?: boolean;
-    poison?: boolean;
-    psychic?: boolean;
-    radiant?: boolean;
-    slashing?: boolean;
-    thunder?: boolean;
 }
 
 export interface IConditionImmune {

@@ -37,17 +37,19 @@ const dragon: Creature = {
         constitution: true,
         wisdom: true
     },
-    skills: {//18 total skills
+    skills: {
         //str
-        athletics: 2,
+        strength: [{key: "athletics", prof: 2}],
         //wis
-        insight: 1,
-        perception: 1,
-        survival: 1,
+        wisdom: [
+            {key: "insight", prof: 1},
+            {key: "perception", prof: 1},
+            {key: "survival", prof: 1}
+        ],
         //cha
-        intimidation: 1
+        charisma: [{key: "intimidation", prof: 1}]
     },
-    damageResistImmune: {//1 is resist, 2 is immune
+    damageVulnResistImmune: {//1 is resist, 2 is immune
         force: 2
     },
     conditionImmune: {
