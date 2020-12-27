@@ -18,7 +18,7 @@ class Creature {
     skills?: ISkills;
 
     damageVulnResistImmune?: IDamageVulnResistImmune;
-    conditionImmune?: IConditionImmune;
+    conditionImmunes?: string[];
     senses!: ISenses;
 
     languages!: string[];
@@ -91,24 +91,6 @@ export interface IDamageVulnResistImmune {//-1 is vuln, 0 is nothing, 1 is resis
     radiant?: number;
     slashing?: number;
     thunder?: number;
-}
-
-export interface IConditionImmune {
-    blinded?: boolean;
-    charmed?: boolean;
-    deafened?: boolean;
-    exhaustion?: boolean;
-    frightened?: boolean;
-    grappled?: boolean;
-    incapacitated?: boolean;
-    invisible?: boolean;
-    paralyzed?: boolean;
-    petrified?: boolean;
-    poisoned?: boolean;
-    prone?: boolean;
-    restrained?: boolean;
-    stunned?: boolean;
-    unconscious?: boolean;
 }
 
 export interface ISenses {

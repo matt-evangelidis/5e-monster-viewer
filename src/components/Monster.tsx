@@ -6,6 +6,7 @@ import { Speed } from "./Speed";
 import { SavingThrows } from "./SavingThrows";
 import { Skills } from "./Skills";
 import { DamageVulnResistImmune } from "./DamageVulnResistImmune";
+import { ConditionImmunes } from "./ConditionImmunes";
 
 interface Props {
     creature: Creature;
@@ -25,6 +26,13 @@ const Monster: React.FC<Props> = ({ creature }) => {
             <SavingThrows saves={creature.saves}stats={creature.stats} proficiency ={creature.proficiency}/>
             <Skills skills={creature.skills} stats={creature.stats} proficiency={creature.proficiency}/>
             <DamageVulnResistImmune damages={creature.damageVulnResistImmune}/>
+            <ConditionImmunes conditions={creature.conditionImmunes}/>
+            {/* Senses */}
+            {/* Languages */}
+            {/* Challenge */}
+            {/* Traits */}
+            {/* Actions */}
+            {/* Legendary Actions */}
             
         </div>
     );

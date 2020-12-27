@@ -52,9 +52,7 @@ const dragon: Creature = {
     damageVulnResistImmune: {//1 is resist, 2 is immune
         force: 2
     },
-    conditionImmune: {
-        frightened: true
-    },
+    conditionImmunes: ["frightened","charmed","prone"],
     senses:{
         blindsight: 60,
         darkvision: 120
