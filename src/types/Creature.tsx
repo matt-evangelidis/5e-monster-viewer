@@ -31,7 +31,11 @@ class Creature {
     };
     reactions?: IEffect[];
     legendary?: boolean;
-    legendaryActions?: IEffect[];
+    legendaryActions?: {
+        desc: string;
+        actions: IEffect[];
+        
+    }
     mythic?: boolean;
 
 };
@@ -41,9 +45,7 @@ export interface ITrait {
     desc: string;
 };
 
-export interface IEffect {
-    name: string;
-    desc: string;
+export interface IEffect extends ITrait {
     subEffects?: IEffect[];
 };
 
