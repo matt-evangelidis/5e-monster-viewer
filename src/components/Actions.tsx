@@ -37,7 +37,7 @@ export const Actions: React.FC<Props> = ({attacks, effects, multiattack}) => {
     if (attacks && !effects) {
         attacks.sort( (a,b) => sortAZ(a.name, b.name));
         displayAttacks = attackList(attacks);
-        console.log("attacks",attacks);
+        //console.log("attacks",attacks);
     }
     //if a creature's actions only contains attacks
     else if(effects && !attacks) {
@@ -48,7 +48,7 @@ export const Actions: React.FC<Props> = ({attacks, effects, multiattack}) => {
             }
         });
         displayEffects = effectList(effects);
-        console.log("effects",effects);
+        //console.log("effects",effects);
     }
 
     //if a creature's actions has both attacks and effects
@@ -70,17 +70,19 @@ export const Actions: React.FC<Props> = ({attacks, effects, multiattack}) => {
             actionsMerge.push(effectCopy)
         });
         actionsMerge.sort( (a, b) => sortAZ(a.name, b.name));
-        console.log("displayMerge",actionsMerge)
+        //console.log("displayMerge",actionsMerge)
 
         displayActions = actionsMerge.map(action => {
-            console.log("Display Actions mapping", action);
+            //console.log("Display Actions mapping", action);
             const type = action.type;
             const value = action.value;
+
+            //necessary to give each called Component a key
             if (type === "attack") {
-                return <Attack attack={value}/>;
+                return <Attack key={value.name} attack={value}/>;
             }
-            else if (type === "effect") {
-                return <Effect effect={value}/>;
+            else {
+                return <Effect key={value.name} effect={value}/>;
             }
         });
     }
