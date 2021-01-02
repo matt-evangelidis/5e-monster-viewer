@@ -24,10 +24,15 @@ class Creature {
     languages!: string[];
     challenge!: number;
     traits?: ITrait[];
-    actions!: entry[];
+    actions?: {
+        attacks?: IAttack[];
+        effects?: IEffect[];
+        multiattack?: IEffect;
+    };
+    reactions?: IEffect[];
     legendary?: boolean;
+    legendaryActions?: IEffect[];
     mythic?: boolean;
-    legendaryActions?: entry[];
 
 };
 
@@ -36,9 +41,19 @@ export interface ITrait {
     desc: string;
 };
 
-interface entry {
+export interface IEffect {
     name: string;
     desc: string;
+    subEffects?: IEffect[];
+};
+
+export interface IAttack {
+    name: string;
+    type: string;
+    toHit: string;
+    reach: string;
+    target: string;
+    onHit: string;
 };
 
 export interface ISpeeds {

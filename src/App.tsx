@@ -78,7 +78,65 @@ const dragon: Creature = {
         throw or ability check, it can choose to succeed instead.`},
         {name:"Spell Resistance", desc: `The dragon takes half damage from spells.`},
     ],
-    actions: [],
+    actions: {
+        attacks:[
+            {name:"Bite", 
+            type: "Melee Weapon Attack", 
+            toHit:"+18", 
+            reach:"15", 
+            target:"one target", 
+            onHit:`36 (4d12 + 10) piercing damage and 28 (8d6) force
+            damage. If the target is a creature, the dragon may grapple it
+            (escape DC 26). Until this grapple ends, the dragon may not bite
+            another target.`},
+            
+            {name:"Claw",
+            type: "Melee Weapon Attack",
+            toHit:"+18",
+            reach:"10",
+            target:"one target",
+            onHit:`29 (3d12 + 10) slashing damage.`},
+
+            {name:"Tail",
+            type: "Melee Weapon Attack",
+            toHit:"+18",
+            reach:"15",
+            target:"each target of the dragon's choice within range",
+            onHit:`26 (3d10 + 10) bludgeoning
+            damage. A creature hit by this attack must succeed on a DC 24
+            Strength saving throw or be knocked prone.`},
+        ],
+        effects:[
+            {name:"Breath Weapons (Recharge 5-6)", desc:`The dragon uses one of the following breath weapons:`,
+            subEffects:[
+                {name:"Antimagic Bomb", desc:`The dragon spits a globule of antimagic
+                at a point within 60 feet which explodes in a 20-foot radius
+                centered on that point. Each spell or magical effect in the area is
+                dispelled as if affected by a dispel magic spell (+6 to dispel spells
+                of 7th level or higher).`},
+                {name:"Force Breath.", desc:`The dragon exhales a pure disintegrating force
+                in a 500-foot line that is 10 feet wide. Everything in that
+                line must succeed on a DC 24 Dexterity saving throw, taking
+                110 (20d10) force damage on a failure, or half as much on a
+                success. A creature reduced to 0 hit points by this damage is
+                disintegrated. Objects and structures in the area not being worn
+                or carried take double damage.`}
+            ]
+        },
+            {name:"Dread Visage", desc:`Each creature of the dragon’s choice within 120
+            feet of the dragon that are aware of it must succeed on a DC 24
+            Wisdom saving throw or become frightened for 1 minute. While
+            frightened in this way, a creature must take the Dash action and
+            move away from the dragon by the safest available route on each of
+            its turns. If a creature ends its turn in a location where it can’t see
+            the dragon, it can attempt a DC 24 Wisdom saving throw, ending
+            the effect on a success. If a creature’s saving throw is successful or
+            the effect ends for it, the creature is immune to the dragon’s Dread
+            Visage for 1 minute.`},
+        ],
+        multiattack: {name:"Multiattack", desc:`The dragon uses its Dread Visage. It then makes
+        three attacks: one with its Bite or Tail, and two with its Claw.`}
+    },
     legendary: true,
     legendaryActions: []
 };
